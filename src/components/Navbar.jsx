@@ -8,26 +8,31 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
+      {/* Logo */}
       <Link to="/" className="nav-logo">Click2Cart</Link>
 
-      {/* Hamburger */}
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
+      {/* Right side */}
+      <div className="nav-right">
+
+        {/* Hamburger */}
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
+        {/* Cart */}
+        <Link to="/cart" className="cart-link">
+          🛒
+          {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+        </Link>
       </div>
 
-      {/* Links */}
+      {/* Menu */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li><NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink></li>
         <li><NavLink to="/products" onClick={() => setMenuOpen(false)}>Products</NavLink></li>
         <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink></li>
         <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
       </ul>
-
-      {/* Cart */}
-      <Link to="/cart" className="cart-link">
-        🛒
-        {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-      </Link>
     </nav>
   );
 }

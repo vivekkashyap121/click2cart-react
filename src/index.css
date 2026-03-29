@@ -1559,3 +1559,85 @@ ul { list-style: none; }
     color: white;
   }
 }
+
+/* ─── NAV RIGHT ───────────────────────── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ─── HAMBURGER ───────────────────────── */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ─── MOBILE NAVBAR FIX 🔥 ───────────────── */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide default nav */
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: var(--navy);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    display: none;
+  }
+
+  /* Show menu when open */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    color: white;
+  }
+
+  /* Improve layout */
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perks-grid,
+  .team-grid,
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-actions {
+    flex-direction: column;
+  }
+}
