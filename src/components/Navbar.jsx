@@ -8,25 +8,25 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      {/* Logo */}
-      <Link to="/" className="nav-logo">Click2Cart</Link>
 
-      {/* Right side */}
-      <div className="nav-right">
-
+      {/* LEFT SIDE */}
+      <div className="nav-left">
         {/* Hamburger */}
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </div>
 
-        {/* Cart */}
-        <Link to="/cart" className="cart-link">
-          🛒
-          {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-        </Link>
+        {/* Logo */}
+        <Link to="/" className="nav-logo">Click2Cart</Link>
       </div>
 
-      {/* Menu */}
+      {/* RIGHT SIDE */}
+      <Link to="/cart" className="cart-link">
+        🛒
+        {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+      </Link>
+
+      {/* MENU */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li><NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink></li>
         <li><NavLink to="/products" onClick={() => setMenuOpen(false)}>Products</NavLink></li>
